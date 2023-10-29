@@ -15,3 +15,4 @@ seaborn
 streamlit
 streamlit-lottie
 watchdog
+image
