@@ -12,6 +12,8 @@ st.title('Iris Flower Classification')
 st.write('This app uses 4 inputs to predict the variety of iris flower using a model that build on iris flower dataset. Use the form below to get started')
 
 iris_file = st.file_uploader('Upload Iris Flower Dataset')
+st.write('About Dataset: The Iris flower dataset is a multivariate data set introduced by the British statistician and biologist Ronald Fisher in his 1936 paper The use of multiple measurements in taxonomic problems as well as in the fields of mathematics, statistics and computer science.')
+st.divider()
 
 if iris_file is None:
     rfc_pickle = open('random_forest_iris.pickle', 'rb')
@@ -51,12 +53,12 @@ new_prediction = rfc_model.predict([[sepal_length,sepal_width,petal_length,petal
 prediction_variety = unique_iris_mapping[new_prediction][0]
 st.write(f'We predict your data is {prediction_variety} veriety !!')
 
-if prediction_variety == 'Setosa':
-    image = Image.open('setosa.jpg')
-    st.image(image, caption= ' Setosa')
-elif prediction_variety == 'Versicolor':
-    image = Image.open('versicolor.jpg')
-    st.image(image, caption= 'Versicolor')
-else:
-    image = Image.open('virginica.jpg')
-    st.image(image, caption= 'Virginica')
+# if prediction_variety == 'Setosa':
+#     image = Image.open('setosa.jpg')
+#     st.image(image, caption= ' Setosa')
+# elif prediction_variety == 'Versicolor':
+#     image = Image.open('versicolor.jpg')
+#     st.image(image, caption= 'Versicolor')
+# else:
+#     image = Image.open('virginica.jpg')
+#     st.image(image, caption= 'Virginica')
